@@ -1,22 +1,16 @@
 {
   "name": "react-socket-io-chat-app",
-  "version": "1.0.0",
-  "description": "A React chat app built while following a live coding tutorial, which also employs Socket.IO.",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BryceStPierre/react-socket-io-chat-app.git"
-  },
-  "keywords": [
-    "chat"
-  ],
-  "author": "Bryce St. Pierre",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BryceStPierre/react-socket-io-chat-app/issues"
-  },
-  "homepage": "https://github.com/BryceStPierre/react-socket-io-chat-app#readme"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
