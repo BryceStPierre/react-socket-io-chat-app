@@ -30,7 +30,7 @@ export default class Sidebar extends Component {
                         if (chat.name) {
                             const lastMessage = chat.messages[chat.messages.length - 1];
                             const user = chat.users.find(({ name }) => {
-                                return name !== this.props.name
+                                return name !== this.props.name;
                             }) || { name: 'Community' };
                             const classNames = (activeChat && activeChat.id === chat.id) ? 'active' : '';
 

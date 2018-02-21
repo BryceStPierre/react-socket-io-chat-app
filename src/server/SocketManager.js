@@ -1,6 +1,8 @@
 const io = require('./index').io;
 
-const { VERIFY_USER, USER_CONNECTED, LOGOUT } = require('../Events');
+const { VERIFY_USER, USER_CONNECTED, USER_DISCONNECTED, 
+    LOGOUT, COMMUNITY_CHAT, MESSAGE_RECEIVED, MESSAGE_SENT,
+    TYPING  } = require('../Events');
 const { createUser, createMessage, createChat } = require('../Factories');
 
 let connectedUsers = {};
@@ -29,6 +31,7 @@ module.exports = function (socket) {
     // User disconnects.
 
     // User logouts.
+
 };
 
 function addUser (userList, user) {
