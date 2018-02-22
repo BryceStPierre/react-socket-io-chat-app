@@ -6,7 +6,7 @@ import ChatContainer from '../chats/ChatContainer';
 
 import { USER_CONNECTED, LOGOUT } from '../Events';
 
-const socketURL = 'http://192.168.1.8:3231';
+const socketURL = 'http://localhost:3231';
 
 export default class Layout extends Component {
 

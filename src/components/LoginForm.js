@@ -51,6 +51,7 @@ export default class LoginForm extends Component {
                         type="text"
                         id="nickname"
                         value={nickname}
+                        autoComplete="false"
                         onChange={this.handleChange}
                         placeholder={'My Nickname'}
                         />
