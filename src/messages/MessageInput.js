@@ -11,6 +11,10 @@ export default class MessageInput extends Component {
         };
     }
 
+    componentWillUnmount () {
+        this.stopCheckingTyping();
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.sendMessage();
@@ -22,7 +26,30 @@ export default class MessageInput extends Component {
     }
 
     sendTyping = () => {
+        this.lastUpdateTime = Date.now();
+        if (!this.state.isTyping) {
+            this.setState({ isTyping: true });
+            this.props.sendTyping(true);
+            this.startCheckingTyping();
+        }
+    }
 
+    startCheckingTyping = () => {
+        console.log("Typing...");
+        this.typingInterval = setInterval(() => {
+            if ((Date.now() - this.lastUpdateTime) > 300) {
+                this.setState({ isTyping: false });
+                this.stopCheckingTyping();
+            }
+        }, 300);
+    }
+
+    stopCheckingTyping = () => {
+        console.log("Stopped typing.");
+        if (this.typingInterval) {
+            clearInterval(this.typingInterval);
+            this.props.sendTyping(false);
+        }
     }
 
     render() {
