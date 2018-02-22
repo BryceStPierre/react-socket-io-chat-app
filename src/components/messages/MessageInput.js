@@ -11,10 +11,6 @@ export default class MessageInput extends Component {
         };
     }
 
-    componentWillUnmount () {
-        this.stopCheckingTyping();
-    }
-
     handleSubmit = (e) => {
         e.preventDefault();
         this.sendMessage();
@@ -23,6 +19,10 @@ export default class MessageInput extends Component {
 
     sendMessage = () => {
         this.props.sendMessage(this.state.message);
+    }
+
+    componentWillUnmount () {
+        this.stopCheckingTyping();
     }
 
     sendTyping = () => {
@@ -62,11 +62,11 @@ export default class MessageInput extends Component {
                     >
                     <input
                         id="message"
-                        ref="messageinput"
+                        ref={"messageinput"}
                         type="text"
                         className="form-control"
                         value={message}
-                        autoComplete="off"
+                        autoComplete={"off"}
                         placeholder="Type something interesting..."
                         onKeyUp={e => { e.keyCode !== 13 && this.sendTyping() }}
                         onChange={({ target }) => {

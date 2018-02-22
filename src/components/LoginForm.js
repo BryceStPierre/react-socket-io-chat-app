@@ -13,7 +13,6 @@ export default class LoginForm extends Component {
     }
 
     setUser = ({ user, isUser }) => {
-        console.log(user, isUser);
         if (isUser) {
             this.setError("Username taken.");
         } else {
@@ -24,7 +23,6 @@ export default class LoginForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-
         const { socket } = this.props;
         const { nickname } = this.state;
         socket.emit(VERIFY_USER, nickname, this.setUser);
@@ -51,7 +49,6 @@ export default class LoginForm extends Component {
                         type="text"
                         id="nickname"
                         value={nickname}
-                        autoComplete="false"
                         onChange={this.handleChange}
                         placeholder={'My Nickname'}
                         />
