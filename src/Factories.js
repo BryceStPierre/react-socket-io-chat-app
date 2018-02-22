@@ -16,15 +16,15 @@ const createMessage = ({ message = "", sender = "" } = {}) => (
     }
 );
 
-const createChat = ({ messages = [], name = "Community", users = []} = {}) => {
+const createChat = ({ messages = [], name = "Community", users = [] } = {}) => (
     {
         id: uuidv4(),
-        typingUsers = [],
-        name,
-        messages,
-        users
+		name,
+		messages,
+        users,
+        typingUsers: []
     }
-};
+);
 
 const getTime = (date) => {
     return `${date.getHours()}:${("0"+date.getMinutes()).slice(-2)}`
