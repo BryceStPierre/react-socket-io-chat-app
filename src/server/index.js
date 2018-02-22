@@ -1,5 +1,5 @@
 var app = require('http').createServer();
-var io = module.exports.io = require('socket.io')(app);
+var io = module.exports.io = require('socket.io')(app, { wsEngine: 'ws' });
 
 const PORT = process.env.PORT || 3231;
 
